@@ -31,7 +31,7 @@ const HomePage = () => {
                 <section className="main-content">
                     <h2>Shop By Room</h2>
                     <p className="main-description">Discover The Perfect Furnishings To Reflect Your Personal Taste And
-                        Elevate Your Home's Aesthetic With Prestindoce.</p>
+                        Elevate Your Home's Aesthetic With PrestinDecor.</p>
                     <div className="room-sections">
                         <div className="room living-room" onClick={() => handleCategoryClick('Living Room')}>
                             <img src={living} alt="Living Room" className="room-image"/>
