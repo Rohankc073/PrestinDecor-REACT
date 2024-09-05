@@ -1,0 +1,139 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-left, .login-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.login-right {
+    background-color: #a8a379;
+    color: #fff;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.login-header h1 {
+    margin-bottom: 10px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.login-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-container label {
+    margin-left: 5px;
+}
+
+.error-box {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.loginButton {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: #333;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-alternatives {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-alternatives span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.google-login, .facebook-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.google-login {
+    background-color: #db4437;
+    color: #fff;
+}
+
+.facebook-login {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link p {
+    margin: 0;
+}
+
+.right-content {
+    text-align: center;
+}
+
+.right-image {
+    max-width:600px;
+    height: 300px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}

@@ -1,0 +1,33 @@
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+.feature-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #777;
+}

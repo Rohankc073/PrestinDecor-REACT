@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+    text-align: center;
+    padding: 0;
+}
+
+.header {
+    background-color: #a8a379;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This line ensures the header content is on the left and the image is on the right */
+    text-align: left;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.header h1 {
+    color: white;
+    margin-top: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+
+.header .buttons {
+    display: flex;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+.shop-btn, .explore-btn, .explore-secondary-btn {
+    background-color: #D6CE93;
+    text-align: left;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.explore-btn {
+    margin-left: 20px;
+}
+
+.shop-btn:hover, .explore-btn:hover, .explore-secondary-btn:hover {
+    background-color: #a8a379;
+}
+
+.crafted-text {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.description-text {
+    color: #344c2c;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.sofa-image {
+    position: absolute;
+    top: 90px;
+    left: 830px;
+    max-width: 600px;
+    height: auto;
+}
+
+.main-content {
+    margin-top: 40px;
+}
+
+.main-content h2 {
+    color: #344c2c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.main-description {
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.room-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.room {
+    width: 30%;
+    margin: 20px 0;
+    cursor: pointer; /* Add pointer cursor to indicate clickability */
+}
+
+.room img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.room img:hover {
+    transform: scale(1.05); /* Scale image on hover */
+}
+
+.room h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #344c2c;
+}
+
+.room p {
+    margin-top: 10px;
+    color: #777;
+}
+
+.category-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.category-button h3 {
+    margin: 0;
+}

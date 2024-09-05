@@ -1,0 +1,124 @@
+.box34 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+    height: 350px;
+    width: 280px;
+    padding: 20px 0px 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.box34-content {
+    background: none;
+    margin-left: 10px;
+    position: relative;
+}
+
+.love-button12 {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #e2e7e6;
+    color: #a8a379;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.add-to-cart-button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #e2e7e6;
+    color: #a8a379;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.box1:hover .love-button12,
+.box1:hover .add-to-cart-button {
+    opacity: 1;
+}
+
+.button-container123 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box-image123 {
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+    margin: auto;
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.caption1 {
+    margin: 10px;
+}
+
+.tooltip12 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip12:hover .tooltiptext12,
+.tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext12,
+.tooltiptext2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: #e2e7e6;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    padding: 7px;
+    position: absolute;
+    z-index: 1;
+    bottom: -60%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltiptext12::after,
+.tooltiptext2::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e2e7e6 transparent transparent transparent;
+}
