@@ -159,3 +159,44 @@ h1 {
 .action-button:hover {
   background-color: #0056b3;
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination-controls button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+  background-color: #0056b3;
+}
+
+.pagination-controls button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Additional responsive styles if needed */
+@media (max-width: 768px) {
+  .pagination-controls button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+

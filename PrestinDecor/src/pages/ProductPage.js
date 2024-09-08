@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { firestore, auth } from '../firebase';
 import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
 import { onAuthStateChanged } from 'firebase/auth';
@@ -12,6 +11,8 @@ import ProductBox from './productbox';
 const ProductsPage = () => {
     const [products, setProducts] = useState([]);
     const [user, setUser] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 12; // Number of products per page
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -32,14 +33,37 @@ const ProductsPage = () => {
         return () => unsubscribe();
     }, []);
 
+    // Calculate products for the current page
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(products.length / productsPerPage);
+
+    // Pagination control handlers
+    const goToNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const goToPreviousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const setPage = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
     const handleAddToCart = async (product) => {
         if (!user) {
             alert('Please log in to add the product to the cart.');
             console.log('User not logged in. Please log in to add to cart.');
             return;
         }
-
-        console.log('User:', user);
 
         const { id, name: productName, price, imageUrl } = product;
         const quantity = 1;
@@ -84,8 +108,6 @@ const ProductsPage = () => {
             return;
         }
 
-        console.log('User:', user);
-
         const { id, name: productName, price, imageUrl } = product;
         alert("Product Added to wishlist");
 
@@ -120,14 +142,36 @@ const ProductsPage = () => {
                 </div>
             </div>
             <div className="products-container">
-                {products.map(product => (
+                {currentProducts.map(product => (
                     <ProductBox
                         key={product.id}
                         product={product}
-                        handleAddToCart={handleAddToCart}
-                        handleAddToWishlist={handleAddToWishlist}
+                        handleAddToCart={() => handleAddToCart(product)}
+                        handleAddToWishlist={() => handleAddToWishlist(product)}
                     />
                 ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <div className="pagination-controls">
+                <button onClick={goToPreviousPage} disabled={currentPage === 1}>
+                    Previous
+                </button>
+
+                {/* Generate page numbers */}
+                {[...Array(totalPages)].map((_, index) => (
+                    <button
+                        key={index + 1}
+                        onClick={() => setPage(index + 1)}
+                        className={currentPage === index + 1 ? 'active' : ''}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+
+                <button onClick={goToNextPage} disabled={currentPage === totalPages}>
+                    Next
+                </button>
             </div>
             <Footpanel />
             <Footer />
