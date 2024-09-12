@@ -7,8 +7,7 @@
   padding: 20px 40px; /* Padding around the navbar items */
 }
 
-
-/* Add this to your navbar.css */
+/* Popup styling */
 .login-popup {
   position: fixed;
   top: 0;
@@ -42,6 +41,7 @@
   color: #666;
 }
 
+/* Logo and branding */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -72,6 +72,7 @@
   text-align: center;
 }
 
+/* Navigation links */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -88,19 +89,22 @@
   text-decoration: none;
   font-size: 14px;
   position: relative;
+  padding-bottom: 5px; /* Add some padding for the underline spacing */
 }
 
+/* Active state and hover state underline */
 .navbar-links a.active::after,
 .navbar-links a:hover::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: #fff; /* White underline */
   left: 0;
-  bottom: -5px;
+  bottom: 0; /* Underline will appear right below the text */
 }
 
+/* Icon styles */
 .navbar-icons {
   display: flex;
   align-items: center;
@@ -115,13 +119,9 @@
   height: 24px;
 }
 
-.cart-button {
+/* Cart and account buttons */
+.cart-button, .account-button {
   margin-right: 20px;
-  background-color: #a8a379;
-  border: none;
-}
-
-.account-button {
   background-color: #a8a379;
   border: none;
 }
@@ -146,11 +146,13 @@
   color: #344c2c; /* Change icon color on hover */
 }
 
+/* Search form styles */
 .search-form {
   display: flex;
   align-items: center;
   margin-left: 20px;
 }
+
 .search-form input::placeholder {
   color: #fff; /* Change placeholder text color to white */
 }

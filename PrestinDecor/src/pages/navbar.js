@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -15,6 +15,7 @@ const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
     const [showLoginPopup, setShowLoginPopup] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation(); // Get the current location
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -63,7 +64,7 @@ const Navbar = () => {
             const timer = setTimeout(() => {
                 setShowLoginPopup(false);
                 navigate('/login'); // Redirect to login page
-            }, 1000); // 3 seconds delay
+            }, 1000); // 1 second delay
             return () => clearTimeout(timer);
         }
     }, [showLoginPopup, navigate]);
@@ -78,17 +79,18 @@ const Navbar = () => {
                 </div>
             </div>
             <ul className="navbar-links">
-                <li><Link to="/" className="active">Home</Link></li>
-                <li><Link to="/product">Products</Link></li>
-                <li><a href="FAQ">FAQ</a></li>
-                <li><a href="/contactus">Contact Us</a></li>
+                {/* Apply 'active' class dynamically based on the current path */}
+                <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
+                <li><Link to="/product" className={location.pathname === '/product' ? 'active' : ''}>Products</Link></li>
+                <li><Link to="/FAQ" className={location.pathname === '/FAQ' ? 'active' : ''}>FAQ</Link></li>
+                <li><Link to="/contactus" className={location.pathname === '/contactus' ? 'active' : ''}>Contact Us</Link></li>
             </ul>
             <form className="search-form" onSubmit={handleSearchSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Search products..." 
-                    value={searchQuery} 
-                    onChange={handleSearchChange} 
+                <input
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
                 />
                 <button type="submit">
                     <FontAwesomeIcon icon={faSearch} />
