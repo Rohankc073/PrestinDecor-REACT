@@ -1,7 +1,7 @@
 # PrestinDecor-REACT
 
 
-![Screenshot](src/images/Screenshot%202024-09-24%20at%203.10.29%20PM.png)
+![Screenshot](PrestinDecor/src/images/Screenshot 2024-09-24 at 3.10.29 PM.png)
 
 
 
