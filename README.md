@@ -1,7 +1,8 @@
 # PrestinDecor-REACT
 
 
-![Home Page](images/homepage.png)
+![Screenshot](src/images/Screenshot%202024-09-24%20at%203.10.29%20PM.png)
+
 
 
 # Prestin Decor
