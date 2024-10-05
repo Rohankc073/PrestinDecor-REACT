@@ -24,56 +24,64 @@ const ProductDetails = () => {
     fetchProductDetails();
   }, [id]);
 
+  // Add handler for Add to Cart
+  const handleAddToCart = () => {
+    alert("Product added to cart!");
+  };
+
+  // Add handler for Buy Now
+  const handleBuyNow = () => {
+    alert("Proceeding to checkout!");
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
 
+  // Set default colors if no colors are provided in the product
+  const defaultColors = ['black', 'brown', 'grey'];
+  const productColors = product.colors && product.colors.length > 0 ? product.colors : defaultColors;
+
   return (
-    <div className="product-details">
-      {/* <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/products">All Products</Link> &gt; <span>{product.name}</span>
-      </div> */}
-      <div className="product-main">
-        <div className="product-images">
-          <img src={product.imageUrl} alt={product.name} className="main-image" />
-          <div className="thumbnail-images">
-            {product.thumbnails && product.thumbnails.map((thumbnail, index) => (
-              <img key={index} src={thumbnail} alt={`Thumbnail ${index}`} className="thumbnail" />
-            ))}
-          </div>
-        </div>
-        <div className="product-info">
-          <h1>{product.name}</h1>
-          <p className="product-price">NPR {product.price}</p>
-          <div className="product-rating">
-            <span>Rating: {product.rating}</span>
-          </div>
-          <div className="product-description">
-            <p>{product.description}</p>
-          </div>
-          <div className="product-options">
-            <div className="colors">
-              <span>Colors: </span>
-              {product.colors && product.colors.map((color, index) => (
-                <div key={index} className="color-swatch" style={{ backgroundColor: color }}></div>
+      <div className="product-details">
+        <div className="product-main">
+          <div className="product-images">
+            <img src={product.imageUrl} alt={product.name} className="main-image" />
+            <div className="thumbnail-images">
+              {product.thumbnails && product.thumbnails.map((thumbnail, index) => (
+                  <img key={index} src={thumbnail} alt={`Thumbnail ${index}`} className="thumbnail" />
               ))}
             </div>
-            <div className="quantity">
-              <button>-</button>
-              <input type="text" value="1" readOnly />
-              <button>+</button>
-            </div>
           </div>
-          <button className="add-to-cart">Add to Cart</button>
-          <button className="buy-now">Buy Now</button>
+          <div className="product-info">
+            <h1>{product.name}</h1>
+            <p className="product-price">NPR {product.price}</p>
+            <div className="product-rating">
+              <span>Rating: {product.rating}</span>
+            </div>
+            <div className="product-description">
+              <p>{product.description}</p>
+            </div>
+            <div className="product-options">
+              <div className="colors">
+                <span>Colors: </span>
+                {productColors.map((color, index) => (
+                    <div
+                        key={index}
+                        className="color-swatch"
+                        style={{ backgroundColor: color }}
+                        title={color}
+                    ></div>
+                ))}
+              </div>
+            </div>
+            <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
+            <button className="buy-now" onClick={handleBuyNow}>Buy Now</button>
+          </div>
         </div>
+        <Footpanel />
+        <Footer />
       </div>
-      <div className="product-meta">
-        {/* <p>Product ID: {product.id}</p> */}
-      </div>
-      <Footpanel />
-      <Footer />
-    </div>
   );
 };
 
