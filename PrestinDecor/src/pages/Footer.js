@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-section">
                 <h1>PRESTINDECOR</h1>
                 <p>
-                    Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was for us to know what was to be done. the this is a long post for the text. This small text has to be place here, since this is
+                    At Prestindecor, we believe in bringing elegance and comfort to your home. Our carefully curated furniture collection combines quality craftsmanship with modern designs to elevate any space. Discover the perfect blend of style and functionality with us.
                 </p>
                 <div className="social-icons">
                     <FaFacebookF />
@@ -18,26 +18,26 @@ const Footer = () => {
             </div>
             <div className="footer-links">
                 <div className="link-column">
-                    <p>About us</p>
+                    <p>About Us</p>
                     <p>Services</p>
                     <p>Blog</p>
-                    <p>Contact us</p>
+                    <p>Contact Us</p>
                 </div>
                 <div className="link-column">
                     <p>Support</p>
-                    <p>Knowledge base</p>
-                    <p>Live chat</p>
+                    <p>FAQs</p>
+                    <p>Shipping & Returns</p>
                 </div>
                 <div className="link-column">
-                    <p>Jobs</p>
-                    <p>Our team</p>
+                    <p>Careers</p>
+                    <p>Our Team</p>
                     <p>Leadership</p>
                     <p>Privacy Policy</p>
                 </div>
                 <div className="link-column">
-                    <p>Nordic Chair</p>
-                    <p>Kruzo Aero</p>
-                    <p>Ergonomic</p>
+                    <p>Living Room</p>
+                    <p>Office Furniture</p>
+                    <p>Bedroom</p>
                 </div>
             </div>
         </footer>

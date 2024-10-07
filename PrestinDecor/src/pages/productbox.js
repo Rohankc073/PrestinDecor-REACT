@@ -36,7 +36,7 @@ const ProductBox = ({ product, handleAddToCart, handleAddToWishlist }) => {
                     <div className="Category"><span>Category:</span> {product.category}</div>
                     <div className="pricingBox">
                         <div className="salePrice">
-                            <span className="currency">NRP</span>
+                            <span className="currency">NRP </span>
                             <span className="amount">{product.price}</span>
                         </div>
                     </div>
