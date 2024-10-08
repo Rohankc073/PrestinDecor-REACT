@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
-import '../style/login.css'
-import LoginImg from '../images/login.png'
+import '../style/login.css';
+import LoginImg from '../images/login.png';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -18,8 +18,6 @@ const LoginPage = () => {
 
         try {
             const userCredentials = await signInWithEmailAndPassword(auth, email, password);
-            const user = userCredentials.user;
-
             setEmail("");
             setPassword("");
             setError(null);
@@ -29,9 +27,6 @@ const LoginPage = () => {
                 navigate('/');
             }, 3000); // Redirect after 3 seconds
         } catch (error) {
-            console.error('Firebase Authentication Error:', error);
-            console.log('Error Code:', error.code);
-            console.log('Error Message:', error.message);
             setError(getErrorMessage(error));
         }
     };
@@ -39,7 +34,7 @@ const LoginPage = () => {
     const getErrorMessage = (error) => {
         if (error.code === "auth/user-not-found") {
             return "Email not found. Please check your email.";
-        } else if (error.message === "auth/wrong-password") {
+        } else if (error.code === "auth/wrong-password") {
             return "Incorrect password. Please check your password.";
         } else if (error.code === "auth/too-many-requests") {
             return "Your account has been temporarily disabled due to many failed login attempts.";
@@ -52,8 +47,8 @@ const LoginPage = () => {
         <div className="login-container">
             <div className="login-left">
                 <div className="login-header">
-                    <h1>Hi There!</h1>
-                    <p>Welcome to PrestinDecor</p>
+                    <h1>Welcome Back!</h1>
+                    <p>Please login to your account</p>
                 </div>
                 {success ? (
                     <div className="success-message">Login successful! Redirecting to homepage...</div>
@@ -95,7 +90,7 @@ const LoginPage = () => {
             </div>
             <div className="login-right">
                 <div className="right-content">
-                    <img src={LoginImg} alt="Furniture" className="right-image" />
+                    <img src={LoginImg} alt="Login visual" className="right-image" />
                 </div>
             </div>
         </div>

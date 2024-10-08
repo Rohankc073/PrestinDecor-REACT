@@ -2,14 +2,14 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 .login-container {
-    margin-top: 10px;
     display: flex;
     height: 100vh;
+    background-color: #eaf0f9;
 }
 
 .login-left, .login-right {
@@ -21,25 +21,33 @@ body, html {
 }
 
 .login-left {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-right {
     background-color: #a8a379;
-    color: #fff;
+    color: #ffffff;
     padding: 20px;
     justify-content: center;
     align-items: center;
 }
 
 .login-header {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .login-header h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1f1f1f;
+}
+
+.login-header p {
+    color: #666666;
 }
 
 .login-form {
@@ -50,9 +58,18 @@ body, html {
 
 .login-form input {
     margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: none;
     border-radius: 5px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border: 1px solid #a8a379;
 }
 
 .checkbox-container {
@@ -68,56 +85,29 @@ body, html {
 .error-box {
     color: red;
     margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
 }
 
 .loginButton {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .loginButton:hover {
-    background-color: #333;
+    background-color: #333333;
 }
 
 .forgot-password {
     text-align: center;
     margin-top: 10px;
-}
-
-.login-alternatives {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.login-alternatives span {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.google-login, .facebook-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.google-login {
-    background-color: #db4437;
-    color: #fff;
-}
-
-.facebook-login {
-    background-color: #3b5998;
-    color: #fff;
 }
 
 .signup-link {
@@ -126,7 +116,7 @@ body, html {
 }
 
 .signup-link p {
-    margin: 0;
+    color: #666666;
 }
 
 .right-content {
@@ -134,9 +124,25 @@ body, html {
 }
 
 .right-image {
-    margin-top: 100px;
-    max-width:550px;
-    height: 350px;
-    margin-bottom: 100px;
+    max-width: 80%;
     border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-right {
+        display: none;
+    }
+
+    .login-left {
+        flex: 1;
+    }
+
+    .login-form {
+        width: 100%;
+    }
 }
