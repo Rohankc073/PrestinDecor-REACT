@@ -60,7 +60,7 @@ const SignupPage = () => {
 
             setTimeout(() => {
                 navigate('/login');
-            }, 3000); // Redirect after 3 seconds
+            }, 3000);
 
         } catch (error) {
             if (error.code === "auth/email-already-in-use") {
@@ -133,9 +133,7 @@ const SignupPage = () => {
                 </div>
             </div>
             <div className="signup-right">
-                <div className="right-content">
-                    <img src={LoginImg} alt="Furniture" className="right-image" />
-                </div>
+                <img src={LoginImg} alt="Furniture" className="right-image" />
             </div>
         </div>
     );

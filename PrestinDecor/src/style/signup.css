@@ -2,13 +2,15 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
 .signup-container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: #f9f9f9;
 }
 
 .signup-left, .signup-right {
@@ -17,40 +19,59 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px;
 }
 
 .signup-left {
     background-color: #fff;
-    padding: 20px;
+    border-right: 1px solid #ddd;
+    padding: 40px;
 }
 
 .signup-right {
-    background-color: #a8a379;
-    color: #fff;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+    background-color: #f1f1f1;
+    padding: 40px;
 }
 
 .signup-header {
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .signup-header h1 {
     margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.signup-header p {
+    color: #666;
+    font-size: 14px;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
 }
 
 .signup-form input {
     margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 14px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    background: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border-color: #a8a379;
 }
 
 .checkbox-container {
@@ -60,77 +81,79 @@ body, html {
 }
 
 .checkbox-container label {
-    margin-left: 5px;
+    margin-left: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.error-message, .success-message {
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 .error-message {
-    color: red;
-    margin-bottom: 15px;
+    color: #d9534f;
+    background-color: #f9d6d5;
+}
+
+.success-message {
+    color: #5cb85c;
+    background-color: #dff0d8;
 }
 
 .signupButton {
-    background-color: #000;
+    background-color: #a8a379;
     color: #fff;
-    padding: 10px;
+    padding: 14px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .signupButton:hover {
-    background-color: #333;
-}
-
-.signup-alternatives {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.signup-alternatives span {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.google-signup, .facebook-signup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.google-signup {
-    background-color: #db4437;
-    color: #fff;
-}
-
-.facebook-signup {
-    background-color: #3b5998;
-    color: #fff;
-}
-
-.icon {
-    margin-right: 10px;
+    background-color: #8b9760;
 }
 
 .login-link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .login-link p {
-    margin: 0;
-}
-
-.right-content {
-    text-align: center;
+    color: #333;
+    font-size: 14px;
 }
 
 .right-image {
     max-width: 100%;
     border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+    }
+
+    .signup-right {
+        display: none;
+    }
+
+    .signup-left {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .signup-form {
+        width: 100%;
+    }
 }
