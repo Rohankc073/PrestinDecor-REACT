@@ -1,23 +1,32 @@
-/* faq.css */
+/* General Page Styling */
 .faq-page {
-    padding: 20px;
-    background-color: white;
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
 }
 
 .faq-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-content:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 .faq-content h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #a8a379;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .faq-list {
@@ -26,7 +35,7 @@
 }
 
 .faq-list li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
 }
 
@@ -34,28 +43,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: 500;
     color: #333;
-    padding: 10px 15px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .faq-question:hover {
-    background-color: #ddd;
+    background-color: #f1f7ff;
+    border-color: #a8a379;
 }
 
 .faq-answer {
-    padding: 10px 15px;
-    background-color: #fafafa;
-    border-left: 4px solid #007bff;
-    border-radius: 0 0 5px 5px;
+    padding: 15px 20px;
+    background-color: #f0faff;
+    border-left: 4px solid #a8a379;
+    border-radius: 0 0 8px 8px;
+    animation: slideDown 0.3s ease;
+    color: #333;
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Arrow Styling */
 .arrow {
     font-size: 1.2em;
-    transition: transform 0.2s ease;
+    color: #a8a379;
+    transition: transform 0.3s ease;
 }
 
 .arrow.right::before {
@@ -64,4 +91,21 @@
 
 .arrow.down::before {
     content: '▼';
+    transform: rotate(180deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .faq-content h1 {
+        font-size: 2em;
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+
+    .faq-answer {
+        padding: 12px 15px;
+    }
 }
