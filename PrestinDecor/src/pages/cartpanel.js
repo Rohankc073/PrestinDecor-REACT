@@ -114,6 +114,15 @@ const CartPanel = ({ isOpen, onClose }) => {
         }
     };
 
+    // Handle "Buy Now" button click
+    const handleBuyNow = () => {
+        if (user) {
+            navigate('/payment'); // Navigate to the payment page
+        } else {
+            alert('You must be logged in to buy a product.'); // Show alert if not logged in
+        }
+    };
+
     useEffect(() => {
         fetchCartItems();
     }, [user]);
@@ -124,7 +133,7 @@ const CartPanel = ({ isOpen, onClose }) => {
         <div className="cart-panel-overlay">
             <div className="cart-panel">
                 <button className='back-button' onClick={onClose}>Back</button>
-                
+
                 <h1>Your Cart</h1>
                 <ul>
                     {cartItems.map((item) => (
@@ -147,7 +156,7 @@ const CartPanel = ({ isOpen, onClose }) => {
                 </ul>
                 <p className="total-price">Total Price: {totalPrice}</p>
                 <div className="button-container99">
-                    <button className='buy_button' onClick={() => navigate('/payment')}>Buy Now</button>
+                    <button className='buy_button' onClick={handleBuyNow}>Buy Now</button>
                 </div>
             </div>
         </div>,
@@ -156,3 +165,5 @@ const CartPanel = ({ isOpen, onClose }) => {
 };
 
 export default CartPanel;
+
+
