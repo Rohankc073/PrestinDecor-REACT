@@ -135,25 +135,31 @@ const CartPanel = ({ isOpen, onClose }) => {
                 <button className='back-button' onClick={onClose}>Back</button>
 
                 <h1>Your Cart</h1>
-                <ul>
-                    {cartItems.map((item) => (
-                        <li key={item.id} className="cart-item">
-                            <div className="cart-item-box">
-                                <img src={item.image} alt={item.productName} className="cart-item-image"/>
-                                <div className="cart-item-details">
-                                    <p>{item.productName}</p>
-                                    <div className="quantity-control">
-                                        <button className="quantity-button" onClick={() => handleSubtract(item)}>-</button>
-                                        <span className="quantity">{item.quantity}</span>
-                                        <button className="quantity-button" onClick={() => handleAddMore(item)}>+</button>
+
+                {/* Display empty cart message if no items */}
+                {cartItems.length === 0 ? (
+                    <p className="empty-cart-message">Your cart is empty.</p>
+                ) : (
+                    <ul>
+                        {cartItems.map((item) => (
+                            <li key={item.id} className="cart-item">
+                                <div className="cart-item-box">
+                                    <img src={item.image} alt={item.productName} className="cart-item-image"/>
+                                    <div className="cart-item-details">
+                                        <p>{item.productName}</p>
+                                        <div className="quantity-control">
+                                            <button className="quantity-button" onClick={() => handleSubtract(item)}>-</button>
+                                            <span className="quantity">{item.quantity}</span>
+                                            <button className="quantity-button" onClick={() => handleAddMore(item)}>+</button>
+                                        </div>
+                                        <p>Price: {item.price * item.quantity}</p>
+                                        <button className="remove_btn" onClick={() => handleRemoveFromCart(item)}>Remove</button>
                                     </div>
-                                    <p>Price: {item.price * item.quantity}</p>
-                                    <button className="remove_btn" onClick={() => handleRemoveFromCart(item)}>Remove</button>
                                 </div>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                            </li>
+                        ))}
+                    </ul>
+                )}
                 <p className="total-price">Total Price: {totalPrice}</p>
                 <div className="button-container99">
                     <button className='buy_button' onClick={handleBuyNow}>Buy Now</button>
@@ -165,5 +171,3 @@ const CartPanel = ({ isOpen, onClose }) => {
 };
 
 export default CartPanel;
-
-
