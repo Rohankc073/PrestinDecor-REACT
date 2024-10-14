@@ -51,66 +51,70 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contact-container">
-      <h1>Contact us</h1>
-      <p>Fill out the form below and we will reply within 24 hours</p>
-      <div className="form-image-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name *</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+      <>
+        <div className="contact-container">
+          <h1>Contact us</h1>
+          <p>Fill out the form below and we will reply within 24 hours</p>
+          <div className="form-image-container">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Name *</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="subject">Subject *</label>
+                <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                >
+                  <option value="">Select subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Support</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                ></textarea>
+              </div>
+              <button type="submit" className="submit-btn">Send message</button>
+            </form>
+            <div className="contact-image">
+              <img src={image1} alt="Contact" />
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="subject">Subject *</label>
-            <select
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select subject</option>
-              <option value="general">General Inquiry</option>
-              <option value="support">Support</option>
-              <option value="feedback">Feedback</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-            ></textarea>
-          </div>
-          <button type="submit" className="submit-btn">Send message</button>
-        </form>
-        <div className="contact-image">
-          <img src={image1} alt="Contact" />
         </div>
-      </div>
-      <Footpanel />
-      <Footer />
-    </div>
+
+        {/* Footer and Footpanel are now outside of the contact-container */}
+        <Footpanel />
+        <Footer />
+      </>
   );
 };
 
